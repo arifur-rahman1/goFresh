@@ -1,9 +1,13 @@
+import About from "../Components/About";
 import Banner from "../Components/banner";
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>        
+            <Banner></Banner>     
+            <div className=" container mx-auto">
+            <About></About>  
+            </div> 
         </div>
     );
 };

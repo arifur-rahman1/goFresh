@@ -16,7 +16,7 @@ const Banner = () => {
       There are many variations of passages of  available, but the majority have suffered alteration in some form
       </h3>
       <div>
-     <button className="btn btn-success mr-8 ">Descover More</button>
+     <button className="btn btn-success mr-8 text-white">Descover More</button>
       {/* <button className="btn btn-success btn-outline">Primary</button> */}
      </div>
       </div>
@@ -30,17 +30,17 @@ const Banner = () => {
     </div>
   </div> 
   <div id="slide2" className="carousel-item relative w-full">
-    <img src={egg} className="w-full" />
+    <img src={fruit} className="w-full" />
     <div className="absolute h-full flex items-center top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
       <div className="text-white pl-10 space-y-7">
       <h1 className=" font-extrabold text-6xl w-1/3">
-      Affordable Price For Every Eggs
+      Affordable Price For Every Fruits
       </h1>
       <h3>
       There are many variations of passages of  available, but the majority have suffered alteration in some form
       </h3>
       <div>
-     <button className="btn btn-success mr-8 ">Descover More</button>
+     <button className="btn btn-success mr-8 text-white">Descover More</button>
       {/* <button className="btn btn-success btn-outline">Primary</button> */}
      </div>
       </div>
@@ -54,17 +54,17 @@ const Banner = () => {
     </div>
   </div> 
   <div id="slide3" className="carousel-item relative w-full">
-    <img src={fruit} className="w-full" />
+    <img src={egg} className="w-full" />
     <div className="absolute h-full flex items-center top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
       <div className="text-white pl-10 space-y-7">
       <h1 className=" font-extrabold text-6xl w-1/3">
-      Affordable Price For Every Fruits
+      Affordable Price For Every Eggs
       </h1>
       <h3>
       There are many variations of passages of  available, but the majority have suffered alteration in some form
       </h3>
       <div>
-     <button className="btn btn-success mr-8 ">Descover More</button>
+     <button className="btn btn-success mr-8 text-white">Descover More</button>
       {/* <button className="btn btn-success btn-outline">Primary</button> */}
      </div>
       </div>

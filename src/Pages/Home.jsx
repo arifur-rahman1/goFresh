@@ -10,7 +10,7 @@ const Home = () => {
             <div className=" container mx-auto">
             <About></About>  
             <div className="my-10">
-                <h4 className="text-center font-extrabold text-3xl  ">Our Products</h4>
+                <h4 className="text-center font-extrabold text-3xl mb-10 ">Our Products</h4>
                 <Products></Products>
             </div>
 

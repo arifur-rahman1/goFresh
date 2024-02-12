@@ -5,7 +5,7 @@ const CheckOut = () => {
     const product= useLoaderData()
     const {title,img,description,price}=product;
     //  Counter is a state initialized to 0
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
  
     // Function is called everytime increment button is clicked
     const handleClick1 = () => {
@@ -16,11 +16,13 @@ const CheckOut = () => {
     // Function is called everytime decrement button is clicked
     const handleClick2 = () => {
         // Counter state is decremented
-        if(counter > 0){
+        if(counter > 1){
             setCounter(counter - 1);
         }
         
     };
+    const updatedPrice=price*counter;
+
     return (
         <div>
           
@@ -45,12 +47,13 @@ const CheckOut = () => {
             <div
                 style={{
                     fontSize: "120%",
-                    position: "relative",
-                    fontWeight:"bold"
+                    
+                    fontWeight:"bold",
+                    
                     
                 }}
             >
-                {counter}
+                {counter} KG
             </div>
             <div className="buttons">
                 <div className="flex">
@@ -80,7 +83,7 @@ const CheckOut = () => {
                 <div>
                     <div className="inline-block align-bottom mr-5">
                         <span className="text-2xl leading-none align-baseline">$</span>
-                        <span className="font-bold text-3xl leading-none align-baseline">{price}</span>
+                        <span className="font-bold text-3xl leading-none align-baseline">{updatedPrice}</span>
                         
                     </div>
                     <div className="inline-block align-bottom">

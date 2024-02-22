@@ -3,7 +3,7 @@ import logo from "../assets/Banner/Banner.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, update } = useContext(AuthContext);
   // making password toggle
   const [showPass, setShowpass] = useState(false);
   const passwordToggle = () => {
@@ -13,14 +13,16 @@ const Register = () => {
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
-    // const name=form.name.value
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     // console.log(name,email,password);
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        update(name)
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
       })
       .catch((error) => console.log(error));
   };

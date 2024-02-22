@@ -3,7 +3,7 @@ import logo from "../assets/Banner/Banner.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn} = useContext(AuthContext);
   // make password field toggle
   const [showPass, setShowpass] = useState(false);
   const passwordToggle = () => {
@@ -23,6 +23,11 @@ const Login = () => {
       })
       .catch((error) => console.log(error));
   };
+  const handleWithGoogle=()=>{
+    googleSignIn()
+    .then((result)=>console.log(result))
+    .catch((error)=>console.log(error))
+  }
   return (
     <div>
       <div className="relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
@@ -145,7 +150,7 @@ const Login = () => {
                 </div>
                 {/* form  */}
                 <div className="mt-10 grid space-y-4">
-                  <button
+                  <button onClick={handleWithGoogle}
                     className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
                          hover:border-green-400 focus:bg-green-50 active:bg-green-100"
                   >

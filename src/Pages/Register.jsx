@@ -3,7 +3,7 @@ import logo from "../assets/Banner/Banner.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 const Register = () => {
-  const { createUser, update } = useContext(AuthContext);
+  const { createUser, update,googleSignIn } = useContext(AuthContext);
   // making password toggle
   const [showPass, setShowpass] = useState(false);
   const passwordToggle = () => {
@@ -19,13 +19,19 @@ const Register = () => {
     // console.log(name,email,password);
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
+          console.log(result)
         update(name)
           .then((result) => console.log(result))
           .catch((error) => console.log(error));
       })
       .catch((error) => console.log(error));
   };
+  // google login
+  const handleWithGoogle=()=>{
+    googleSignIn()
+    .then((result)=>console.log(result))
+    .catch((error)=>console.log(error))
+  }
   return (
     <div>
       <div className="relative py-16 bg-gradient-to-r from-green-50 to-green-200">
@@ -171,7 +177,7 @@ const Register = () => {
                 </div>
                 {/* form  */}
                 <div className="mt-10 grid space-y-4">
-                  <button
+                  <button onClick={handleWithGoogle}
                     className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
                          hover:border-green-400 focus:bg-green-50 active:bg-green-100"
                   >

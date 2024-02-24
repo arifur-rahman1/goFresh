@@ -73,7 +73,7 @@ const Register = () => {
                         className="pl-2 outline-none border-none"
                         type="text"
                         name="name"
-                        id=""
+                       
                         placeholder="Full name"
                       />
                     </div>
@@ -96,7 +96,7 @@ const Register = () => {
                         className="pl-2 outline-none border-none"
                         type="text"
                         name="email"
-                        id=""
+                     
                         placeholder="Email Address"
                       />
                     </div>
@@ -117,7 +117,7 @@ const Register = () => {
                         className="pl-2 outline-none border-none"
                         type={showPass ? "text" : "password"}
                         name="password"
-                        id=""
+                      
                         placeholder="Password"
                       />
                       {/* password toggle button */}

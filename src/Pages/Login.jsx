@@ -68,7 +68,6 @@ const Login = () => {
                         className="pl-2 outline-none border-none"
                         type="text"
                         name="email"
-                        id=""
                         placeholder="Email Address"
                       />
                     </div>
@@ -89,7 +88,6 @@ const Login = () => {
                         className="pl-2 outline-none border-none"
                         type={showPass ? "text" : "password"}
                         name="password"
-                        id=""
                         placeholder="Password"
                       />
                       {/* password toggle button */}

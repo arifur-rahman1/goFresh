@@ -14,9 +14,9 @@ import app from "../Authentication/firebase.config";
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
-    const provider= new GoogleAuthProvider()
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const provider= new GoogleAuthProvider()
 
   // create user
   const createUser = (email, password) => {
@@ -45,16 +45,17 @@ const googleSignIn=()=>{
     return signOut(auth);
   };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      console.log("CurrentUSer= ", currentUser);
-      setLoading(false);
-    });
-    return () => {
-      return unsubscribe;
-    };
-  }, []);
+  useEffect(()=>{
+    const unSubscribe=onAuthStateChanged(auth,currentUser=>{
+        setUser(currentUser);
+        console.log("current User",currentUser);
+        setLoading(false)
+    })
+    return()=>{
+        return unSubscribe()
+    }
+},[])
+
 
   const authinfo = {
     user,

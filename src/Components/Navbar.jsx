@@ -32,20 +32,20 @@ const Navbar = () => {
             <button onClick={handleLogout}>Log Out</button>
           </li>
           <li>
-        <NavLink
-          to="/cart"
-          style={({ isActive }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isActive ? "green" : "black",
-              textDecoration: isActive ? "underline" : " ",
-              //   viewTransitionName: isTransitioning ? "slide" : "",
-            };
-          }}
-        >
-          Cart
-        </NavLink>
-      </li>
+            <NavLink
+              to="/cart"
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isActive ? "green" : "black",
+                  textDecoration: isActive ? "underline" : " ",
+                  //   viewTransitionName: isTransitioning ? "slide" : "",
+                };
+              }}
+            >
+              Cart
+            </NavLink>
+          </li>
         </>
       ) : (
         <li>

@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Cart from "../Pages/Cart";
 import PrivateRoute from "./PrivateRoute";
+import UserReview from "../Pages/UserReview";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         {
           path:'/cart',
           element:<PrivateRoute><Cart></Cart></PrivateRoute>,
+
+        },
+        {
+          path:'/userReview',
+          element:<PrivateRoute><UserReview></UserReview></PrivateRoute>,
 
         },
       ],

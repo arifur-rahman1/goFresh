@@ -30,6 +30,30 @@ const Cart = () => {
         });
     }
   };
+  const handleConfirm=(id)=>{
+    fetch(`http://localhost:5000/orders/${id}`,
+    {
+      method:'PATCH',
+      headers:{
+        'content-type':'application/json'
+
+      },
+      body:JSON.stringify({status:'confirm'})
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      if(data.modifiedCount > 0){
+        // update state
+        const remainig=products.filter(product=>product._id !== id);
+        const updated=products.find(product=>product._id===id);
+        updated.status='confirm';
+        const newOrders=[updated, ...remainig];
+        setProducts(newOrders);
+      }
+    })
+
+  }
 
   return (
     <div>
@@ -52,6 +76,7 @@ const Cart = () => {
                     key={product._id}
                     product={product}
                     handleDelete={handleDelete}
+                    handleConfirm={handleConfirm}
                   ></CartProduct>
                 ))}
               </tbody>

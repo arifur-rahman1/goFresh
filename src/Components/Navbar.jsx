@@ -46,6 +46,21 @@ const Navbar = () => {
               Cart
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/userReview"
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isActive ? "green" : "black",
+                  textDecoration: isActive ? "underline" : " ",
+                  //   viewTransitionName: isTransitioning ? "slide" : "",
+                };
+              }}
+            >
+              Review 
+            </NavLink>
+          </li>
         </>
       ) : (
         <li>
